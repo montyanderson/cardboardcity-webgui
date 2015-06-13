@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Ubuntu", Arial;
+    color: #222;
+}
+
+h1 { font-size: 2em; }
+
+nav, section {
+    padding: 1% 10%;
+}
+
+nav {
+    background: #3498db;
+    color: white;
+
+    transition: background 1s;
+}
+
+nav:hover {
+    background: #2980b9;
+}
+
+section {
+    with: 80%;
+}
+
+#buildings > div {
+    width: 100%;
+    background: #eee;
+    border-radius: 5px;
+    padding: 1% 2%;
+    margin-bottom: 2em;
+
+    display: table;
+}
+
+.name {
+    float: left;
+}
+
+.votes {
+    float: right;
+}
+
+.votes > span {
+    transition: color 0.2s;
+}
+
+.votes > span:hover {
+    color: #f39c12;
+}
+
+.green {
+    color: #2ecc71;
+}
+
+.red {
+    color: #e74c3c;
+}
+
+.votes {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}

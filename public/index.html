@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link href="style.css" rel="stylesheet" />
+
+        <script type="x/template" id="template-building">
+            <div class="building-{{id}}">
+                <h1 class="name">{{name}}</h1>
+                <h1 class="votes">
+                    {{#up}}
+                        <span class="green">{{votes}}</span>
+                    {{/up}}
+
+                    {{#down}}
+                        <span class="red">{{votes}}</span>
+                    {{/down}}
+
+                    {{#zero}}
+                        <span>{{votes}}</span>
+                    {{/zero}}
+
+                    <span class="vote-up"   data-id="{{id}}">+</span>
+                    <span class="vote-down" data-id="{{id}}">-</span>
+                </h1>
+            </div>
+        </script>
+
+    </head>
+    <body>
+
+        <nav>
+            <h1>Cardboard City</h1>
+        </nav>
+
+        <section id="buildings">
+
+        </section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="socket.io/socket.io.js"></script>
+        <script src="mustache.min.js"></script>
+        <script src="client.js"></script>
+
+    </body>
+</html>
