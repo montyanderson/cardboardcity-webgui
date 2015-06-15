@@ -37,14 +37,12 @@ io.on("connection", function(socket) {
 
     socket.on("vote-up", function(id) {
         if(db.buildings[id]) {
-            console.log(id);
             io.emit("vote-up", id);
         }
     });
 
     socket.on("vote-down", function(id) {
         if(db.buildings[id]) {
-            console.log(id);
             io.emit("vote-down", id);
         }
     });
