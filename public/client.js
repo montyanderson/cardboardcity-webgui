@@ -28,7 +28,7 @@ function renderBuildings() { /* renders the entire array of buildings as html */
     });
 
     $(".vote-up").click(function() {
-        socket.emit("vote-up", $(this).data("id"));;
+        socket.emit("vote-up", $(this).data("id"));
     });
 
     $(".vote-down").click(function() {
