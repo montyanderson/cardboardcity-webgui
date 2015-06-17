@@ -1,3 +1,5 @@
+var db;
+
 function renderBuildings() { /* renders the entire array of buildings as html */
     $("#buildings").html("");
 
@@ -45,7 +47,6 @@ function getBuilding(id) { /* gets the index of a building in the array */
 }
 
 var socket = io.connect(location.origin);
-var db;
 
 socket.on("init", function(update) {
     db = update;
@@ -54,11 +55,10 @@ socket.on("init", function(update) {
 
 socket.on("vote-up", function(id) {
     db.buildings[getBuilding(id)].votes += 1;
+    renderBuildings();
 });
 
 socket.on("vote-down", function(id) {
-    console.log(id);
     db.buildings[getBuilding(id)].votes -= 1;
     renderBuildings();
-
 });

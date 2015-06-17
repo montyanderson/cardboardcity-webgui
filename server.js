@@ -32,18 +32,30 @@ db.buildings = [
     }
 ];
 
+function getBuilding(id) { /* gets the index of a building in the array */
+    var index;
+
+    db.buildings.forEach(function(building) {
+        if(building.id == id) {
+            index = db.buildings.indexOf(building);
+        }
+    });
+
+    return index;
+}
+
 io.on("connection", function(socket) {
     socket.emit("init", db);
 
     socket.on("vote-up", function(id) {
         if(db.buildings[id]) {
             io.emit("vote-up", id);
+            db.buildings[getBuilding(id)].votes += 1;
         }
     });
 
     socket.on("vote-down", function(id) {
-        if(db.buildings[id]) {
             io.emit("vote-down", id);
-        }
+            db.buildings[getBuilding(id)].votes -= 1;
     });
 });
