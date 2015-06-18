@@ -6,6 +6,31 @@ A web interface for the Cardboard City art exhibition.
 
 ![screenshot](https://i.imgur.com/6gJOcyY.png)
 
+Install
+-------
+
+* Install [node.js](https://nodejs.org/).
+
+* Clone git repository or download a zip:
+
+``` bash
+git clone https://github.com/montyanderson/cardboardcity-webgui.git
+```
+
+* Install dependencies.
+
+``` bash
+npm install # This make require 'sudo' on Linux
+```
+
+* Start the server.
+
+``` bash
+node server
+```
+
+* Go to [localhost:8080](http://localhost:8080) in your browser.
+
 To Do
 -----
 
