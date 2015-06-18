@@ -2,9 +2,9 @@
 
 A web interface for the Cardboard City art exhibition.
 
-* The view as of 13/6/2015
+* The view as of 18/6/2015
 
-![screenshot](https://i.imgur.com/6gJOcyY.png)
+![screenshot](https://i.imgur.com/hdBRvrH.png)
 
 Install
 -------
@@ -44,3 +44,5 @@ To Do
 * Different views: those being built, those built, suggestions
 
 * Linear progressions between views (maybe animations?)
+
+* Should be able to run on as Raspberry Pi 2
