@@ -20,6 +20,7 @@ git clone https://github.com/montyanderson/cardboardcity-webgui.git
 * Install dependencies.
 
 ``` bash
+cd cardboardcity-webgui
 npm install # This make require 'sudo' on Linux
 ```
 
