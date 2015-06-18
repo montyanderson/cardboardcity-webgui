@@ -1,3 +1,5 @@
+(function() {
+
 var db;
 
 function renderBuildings() { /* renders the entire array of buildings as html */
@@ -62,3 +64,5 @@ socket.on("vote-down", function(id) {
     db.buildings[getBuilding(id)].votes -= 1;
     renderBuildings();
 });
+
+})();
