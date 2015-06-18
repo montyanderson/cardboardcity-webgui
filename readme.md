@@ -35,7 +35,7 @@ node server
 To Do
 -----
 
-* User-based suggestions
+* ~~User-based suggestions~~
 
 * Moderated or authenticated suggestions
 

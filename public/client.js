@@ -1,3 +1,5 @@
+var socket;
+
 (function() {
 
 var db;
@@ -48,7 +50,7 @@ function getBuilding(id) { /* gets the index of a building in the array */
     return db.buildings.indexOf(matches[0]);
 }
 
-var socket = io.connect(location.origin);
+socket = io.connect(location.origin);
 
 socket.on("init", function(update) {
     db = update;
@@ -62,6 +64,11 @@ socket.on("vote-up", function(id) {
 
 socket.on("vote-down", function(id) {
     db.buildings[getBuilding(id)].votes -= 1;
+    renderBuildings();
+});
+
+socket.on("building", function(building) {
+    db.buildings.push(building);
     renderBuildings();
 });
 

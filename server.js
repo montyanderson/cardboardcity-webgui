@@ -17,7 +17,7 @@ app.get("/style.css", function(req, res) {
         }, function(error) {
             console.log(error);
         });
-        
+
     });
 });
 
@@ -63,14 +63,27 @@ io.on("connection", function(socket) {
     socket.emit("init", db);
 
     socket.on("vote-up", function(id) {
-        if(db.buildings[id]) {
+        if(getBuilding(id) != -1) {
             io.emit("vote-up", id);
             db.buildings[getBuilding(id)].votes += 1;
         }
     });
 
     socket.on("vote-down", function(id) {
+        if(getBuilding(id) != -1) {
             io.emit("vote-down", id);
             db.buildings[getBuilding(id)].votes -= 1;
+        }
+    });
+
+    socket.on("suggestion", function(name) {
+        var building = {
+            name: name,
+            votes: 0,
+            id: db.buildings.length
+        }
+
+        io.emit("building", building);
+        db.buildings.push(building);
     });
 });
