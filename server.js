@@ -97,7 +97,7 @@ io.on("connection", function(socket) {
                 name: name,
                 votes: 0,
                 id: db.buildings.length
-            }
+            };
 
             io.emit("building", building);
             db.buildings.push(building);
