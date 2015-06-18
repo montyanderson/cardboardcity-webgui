@@ -72,4 +72,8 @@ socket.on("building", function(building) {
     renderBuildings();
 });
 
+socket.on("err", function(error) {
+    alert(error);
+})
+
 })();
