@@ -33,14 +33,27 @@
             <h1>Cardboard City</h1>
         </nav>
 
+        <h2 id="add-building"><a href="#new">Add a building!</a></h2>
+
         <section id="buildings">
 
         </section>
+
+        <div class="modal" id="new">
+            <div>
+
+                <input id="building-name" />
+
+                <a href="#">Close</a>
+
+            </div>
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="socket.io/socket.io.js"></script>
         <script src="mustache.min.js"></script>
         <script src="client.js"></script>
+        <script src="ui.js"></script>
 
     </body>
 </html>
