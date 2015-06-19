@@ -47,6 +47,35 @@ db.buildings = [
     }
 ];
 
+var dbFile = "db.json";
+
+if(fs.existsSync(dbFile) === true) {
+    var json = fs.readFileSync(dbFile);
+
+    if(json) {
+        var data = JSON.parse(json);
+
+        if(data) {
+            db = data;
+            console.log("Loaded database from " + dbFile + ".");
+        } else {
+            console.log("Failed to parse " + dbFile + ".");
+        }
+    } else {
+        console.log("Failed to read " + dbFile + ".");
+    }
+}
+
+setInterval(function() {
+
+    fs.writeFile(dbFile, JSON.stringify(db), function(err) {
+        if(err) {
+            console.log("Failed saving database to file: " + err);
+        }
+    });
+
+}, 30 * 1000); /* save the database to a json file, every 30 seconds */
+
 function getBuilding(id) { /* gets the index of a building in the array */
     var index;
 
