@@ -38,11 +38,25 @@ function renderBuildings() { /* renders the entire array of buildings as html */
     });
 
     $(".vote-up").click(function() {
-        socket.emit("vote-up", $(this).data("id"));
+        var buildingIndex = getBuilding($(this).data("id"));
+
+        if(db.buildings[buildingIndex].voted === undefined) {
+            db.buildings[buildingIndex].voted = true;
+            socket.emit("vote-up", $(this).data("id"));
+        } else {
+            alert("You have already voted on the " + db.buildings[buildingIndex].name + ".");
+        }
     });
 
     $(".vote-down").click(function() {
-        socket.emit("vote-down", $(this).data("id"));
+        var buildingIndex = getBuilding($(this).data("id"));
+
+        if(db.buildings[buildingIndex].voted === undefined) {
+            db.buildings[buildingIndex].voted = true;
+            socket.emit("vote-down", $(this).data("id"));
+        } else {
+            alert("You have already voted on the " + db.buildings[buildingIndex].name + ".");
+        }
     });
 }
 
