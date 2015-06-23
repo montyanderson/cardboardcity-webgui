@@ -1,3 +1,7 @@
+var $ = require("jquery");
+var Mustache = require("mustache");
+//var io = require("socket.io");
+
 var socket;
 
 (function() {
@@ -74,6 +78,6 @@ socket.on("building", function(building) {
 
 socket.on("err", function(error) {
     alert(error);
-})
+});
 
 })();
