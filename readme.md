@@ -27,7 +27,7 @@ npm install # This make require 'sudo' on Linux
 * Start the server.
 
 ``` bash
-node server/server
+npm run
 ```
 
 * Go to [localhost:8080](http://localhost:8080) in your browser.
