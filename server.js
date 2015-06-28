@@ -4,12 +4,12 @@ var fs = require("fs"),
     express = require("express"),
     socketio = require("socket.io");
 
-require("./build.js")();
+//require("./build.js")();
 
 console.log("Generating app...");
 
 var app = express();
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static(__dirname + "/public"));
 
 var server = http.createServer(app);
 
