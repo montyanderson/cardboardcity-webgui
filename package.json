@@ -7,7 +7,7 @@
     "dev": "gulp dev",
     "prepublish": "gulp build",
     "start": "gulp build && node server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp build && node server"
   },
   "repository": {
     "type": "git",
