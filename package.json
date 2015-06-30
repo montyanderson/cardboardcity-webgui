@@ -7,7 +7,7 @@
     "dev": "gulp dev",
     "prepublish": "gulp build",
     "start": "gulp build && node server",
-    "test": "gulp build && node server"
+    "test": "gulp build && node server --test"
   },
   "repository": {
     "type": "git",
