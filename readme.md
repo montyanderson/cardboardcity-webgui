@@ -1,6 +1,8 @@
 # cardboardcity-webgui
 
-![david-dm](https://david-dm.org/montyanderson/cardboardcity-webgui.svg)
+[![Build Status](https://travis-ci.org/montyanderson/cardboardcity-webgui.svg)](https://travis-ci.org/montyanderson/cardboardcity-webgui)
+[![Dependency Status](https://david-dm.org/montyanderson/cardboardcity-webgui.svg)](https://david-dm.org/montyanderson/cardboardcity-webgui)
+[![devDependency Status](https://david-dm.org/montyanderson/cardboardcity-webgui/dev-status.svg)](https://david-dm.org/montyanderson/cardboardcity-webgui#info=devDependencies)
 
 A web interface for the Cardboard City art exhibition.
 
