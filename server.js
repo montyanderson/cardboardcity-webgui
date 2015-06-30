@@ -69,3 +69,8 @@ setInterval(function() {
 
 console.log("Starting server...");
 server.listen(8080);
+
+if(process.argv[2] == "--test") {
+    console.log("Test ran successfully.");
+    process.exit();
+}
