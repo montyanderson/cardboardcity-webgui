@@ -13,6 +13,11 @@ var paths = {
         scripts: ["./assets/scripts/*.js"]
 };
 
+function logError(err) {
+    console.log(err);
+    this.emit("end");
+}
+
 gulp.task("watch", function() {
     gulp.watch(paths.styles, ["styles"]);
     gulp.watch(paths.scripts, ["scripts"]);
@@ -23,6 +28,7 @@ gulp.task("styles", function() {
         .pipe(less({
             paths: [__dirname + "/assets/styles/"]
         }))
+        .on("error", logError)
         .pipe(minify())
         .pipe(rename("bundle.css"))
         .pipe(gulp.dest("./public/"));
@@ -31,6 +37,7 @@ gulp.task("styles", function() {
 gulp.task("scripts", function() {
     return browserify("./assets/scripts/index.js")
     .bundle()
+    .on("error", logError)
     .pipe(source("bundle.js"))
     .pipe(streamify(uglify()))
     .pipe(rename("bundle.js"))

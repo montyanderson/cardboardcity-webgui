@@ -4,8 +4,6 @@ var fs = require("fs"),
     express = require("express"),
     socketio = require("socket.io");
 
-//require("./build.js")();
-
 console.log("Generating app...");
 
 var app = express();

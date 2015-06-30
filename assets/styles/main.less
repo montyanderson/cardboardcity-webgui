@@ -5,6 +5,9 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
 
 body, input {
     font-family: "Ubuntu", Arial;
@@ -12,6 +15,13 @@ body, input {
 }
 
 h1 { font-size: 2em; }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Nav */
 
 nav, section {
     padding: 1% 10%;
@@ -46,44 +56,51 @@ section {
     padding: 0.2em 0.5em;
     border-radius: 0.1em;
     cursor: pointer;
-    transition: 0.2s background-color;
+    transition: 0.2s opacity;
 }
 
 #add-building > a:hover {
-    background-color: #27ae60;
+    opacity: 0.8;
 }
 
-#buildings > div {
-    width: 100%;
-    background: #eee;
-    border-radius: 5px;
-    padding: 1% 2%;
-    margin-bottom: 2em;
+#buildings {
+    div {
+        width: 100%;
+        background: #eee;
+        transition: background 0.2s;
+        border-radius: 5px;
+        padding: 1% 2%;
+        margin-bottom: 2em;
 
-    display: table;
+        display: table;
 
-    .name {
-        float: left;
+        .name {
+            float: left;
+        }
+
+        .votes {
+            float: right;
+
+            span {
+                transition: color 0.2s;
+            }
+
+            span:hover {
+                color: #f39c12;
+            }
+
+            .green {
+                color: #2ecc71;
+            }
+
+            .red {
+                color: #e74c3c;
+            }
+        }
     }
 
-    .votes {
-        float: right;
-
-        span {
-            transition: color 0.2s;
-        }
-
-        span:hover {
-            color: #f39c12;
-        }
-
-        .green {
-            color: #2ecc71;
-        }
-
-        .red {
-            color: #e74c3c;
-        }
+    div:hover {
+        background: #ddd;
     }
 }
 
@@ -146,4 +163,27 @@ section {
 
 #building-name {
     width: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #34495e;
+    color: white;
+
+    p {
+        padding: 1em;
+
+        a {
+            color: #f39c12;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #f1c40f;
+        }
+    }
 }
