@@ -25,7 +25,7 @@ git clone https://github.com/montyanderson/cardboardcity-webgui.git
 
 ``` bash
 cd cardboardcity-webgui
-npm install # This make require 'sudo' on Linux
+npm install # This make require 'may' on Linux
 ```
 
 * Start the server.
