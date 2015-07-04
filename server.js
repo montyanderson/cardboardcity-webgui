@@ -67,8 +67,10 @@ setInterval(function() {
 
 /* Start the server */
 
-console.log("Starting server...");
-server.listen(8080);
+var port = process.env.PORT || process.argv[3] || 8080;
+
+console.log("Server running on port " + port + ".");
+server.listen(port);
 
 if(process.argv[2] == "--test") {
     console.log("Test ran successfully.");
