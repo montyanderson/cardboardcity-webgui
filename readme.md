@@ -6,9 +6,9 @@
 
 A web interface for the Cardboard City art exhibition.
 
-* The view as of 18/6/2015
+* The view as of 7/7/2015
 
-![screenshot](https://i.imgur.com/hdBRvrH.png)
+![screenshot](https://i.imgur.com/ckJd04t.png)
 
 Install
 -------
@@ -41,12 +41,12 @@ To Do
 
 * ~~User-based suggestions~~
 
-* Moderated or authenticated suggestions
+* Moderated or ~~authenticated~~ suggestions
 
-* Some way of limiting votes per-user
+* ~~Some way of limiting votes per-user~~
 
 * Different views: those being built, those built, suggestions
 
 * Linear progressions between views (maybe animations?)
 
-* Should be able to run on as Raspberry Pi 2
+* ~~Should be able to run on as Raspberry Pi 2~~
