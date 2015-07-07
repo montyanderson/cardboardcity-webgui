@@ -1,0 +1,40 @@
+#buildings {
+    div {
+        width: 100%;
+        background: #eee;
+        transition: background 0.2s;
+        border-radius: 5px;
+        padding: 1% 2%;
+        margin-bottom: 2em;
+
+        display: table;
+
+        .name {
+            float: left;
+        }
+
+        .votes {
+            float: right;
+
+            span {
+                transition: color 0.2s;
+            }
+
+            span:hover {
+                color: #f39c12;
+            }
+
+            .green {
+                color: #2ecc71;
+            }
+
+            .red {
+                color: #e74c3c;
+            }
+        }
+    }
+
+    div:hover {
+        background: #ddd;
+    }
+}

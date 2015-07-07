@@ -11,25 +11,9 @@ app.use(express.static(__dirname + "/public"));
 
 var server = http.createServer(app);
 
-var db = {};
-
-db.buildings = [
-    {
-        name: "Toothpaste Factory",
-        votes: 6,
-        id: 0
-    },
-    {
-        name: "Shopping Mall",
-        votes: 0,
-        id: 1
-    },
-    {
-        name: "Police Station",
-        votes: -2,
-        id: 2
-    }
-];
+var db = {
+    buildings: []
+};
 
 var dbFile = __dirname + "/db.json";
 

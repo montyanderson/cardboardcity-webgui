@@ -1,4 +1,6 @@
 function sockets(io, db) {
+    var fs = require("fs");
+
     function getBuilding(id) { /* gets the index of a building in the array */
         var index;
 
@@ -57,6 +59,19 @@ function sockets(io, db) {
                 socket.emit("err", "Suggestions should be between 1 and 20 characters.");
             }
         });
+
+        socket.on("login", function(password) {
+            fs.readFile(__dirname + "/.password", function(err, data) {
+                if (err) throw err;
+
+                if(password.trim() == data.toString().trim()) {
+                    console.log("true");
+                } else {
+                    console.log("false");
+                }
+            });
+        });
+
     });
 }
 

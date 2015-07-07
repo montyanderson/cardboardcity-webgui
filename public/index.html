@@ -31,9 +31,10 @@
 
         <nav>
             <h1>Cardboard City</h1>
+            <a class="button" id="admin-login" href="#login">Admin Login</a>
         </nav>
 
-        <h2 id="add-building"><a href="#new">Add a building!</a></h2>
+        <h2><a class="button" id="add-building" href="#new">Add a building!</a></h2>
 
         <section id="buildings">
 
@@ -41,12 +42,18 @@
 
         <div class="modal" id="new">
             <div>
-
                 <input class="name" />
 
-                <button class="post">Post Suggestion</button>
-                <a href="#">Close</a>
+                <h2><a class="button post" href="#">Post Suggestion</a></h2>
+                <h2><a class="button" href="#">Close</a></h2>
+            </div>
+        </div>
 
+        <div class="modal" id="login">
+            <div>
+                <input class="password" type="password" />
+                <h2><a class="button post" href="#">Login</a></h2>
+                <h2><a class="button" href="#">Close</a></h2>
             </div>
         </div>
 

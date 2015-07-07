@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url("http://fonts.googleapis.com/css?family=Ubuntu");
 
 * {
     margin: 0;
@@ -16,6 +16,14 @@ body, input {
 
 h1 { font-size: 2em; }
 
+h2 {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;
@@ -24,7 +32,7 @@ a {
 /* Nav */
 
 nav, section {
-    padding: 1% 10%;
+    padding: 1em 10%;
 }
 
 nav {
@@ -32,6 +40,10 @@ nav {
     color: white;
 
     transition: background 0.2s;
+
+    .admin-login {
+
+    }
 }
 
 nav:hover {
@@ -42,67 +54,35 @@ section {
     with: 80%;
 }
 
-#add-building {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-#add-building > a {
-    background-color: #1abc9c;
+.button {
     color: white;
     padding: 0.2em 0.5em;
     border-radius: 0.1em;
     cursor: pointer;
     transition: 0.2s opacity;
+    background-color: #e74c3c;
+    font-size: 1em !important;
+    font-weight: bold;
 }
 
-#add-building > a:hover {
+.button:hover {
     opacity: 0.8;
 }
 
-#buildings {
-    div {
-        width: 100%;
-        background: #eee;
-        transition: background 0.2s;
-        border-radius: 5px;
-        padding: 1% 2%;
-        margin-bottom: 2em;
-
-        display: table;
-
-        .name {
-            float: left;
-        }
-
-        .votes {
-            float: right;
-
-            span {
-                transition: color 0.2s;
-            }
-
-            span:hover {
-                color: #f39c12;
-            }
-
-            .green {
-                color: #2ecc71;
-            }
-
-            .red {
-                color: #e74c3c;
-            }
-        }
-    }
-
-    div:hover {
-        background: #ddd;
-    }
+#add-building {
+    background-color: #1abc9c;
 }
+
+#admin-login {
+    text-align: right;
+    position: absolute;
+    top: 0.1em;
+    right: 1%;
+
+    background-color: #f1c40f;
+}
+
+@import url("buildings.less");
 
 #add-building, .votes {
     -webkit-touch-callout: none;
@@ -115,45 +95,7 @@ section {
 }
 
 
-/* Modal */
-
-.modal {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-
-	background: rgba(0, 0, 0, 0.8);
-	z-index: 99999;
-	opacity: 0;
-    transition: 1s opacity;
-	pointer-events: none;
-    display: none;
-
-    div {
-        padding: 1%;
-    	width: 700px;
-    	margin-top: 5%;
-    	margin-left: auto;
-    	margin-right: auto;
-
-    	border-radius: 5px;
-    	background: white;
-
-        input {
-            font-size: 3em;
-            padding: 0.1em;
-            width: 98%;
-        }
-    }
-}
-
-.modal:target {
-	opacity: 1;
-	pointer-events: auto;
-    display: block;
-}
+@import url("modal.less");
 
 #new {
     .post {

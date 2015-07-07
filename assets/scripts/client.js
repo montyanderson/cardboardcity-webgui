@@ -12,6 +12,10 @@ module.exports = function() {
             }
         });
 
+        if(db.buildings.length === 0) {
+            $("#buildings").html("<h2>There aren't any buildings. Why not suggest some?</h2>");
+        }
+
         db.buildings.forEach(function(building) {
             building.up = false;
             building.down = false;
