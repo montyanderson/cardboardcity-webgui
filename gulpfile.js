@@ -26,7 +26,7 @@ gulp.task("watch", function() {
 gulp.task("styles", function() {
     return gulp.src("./assets/styles/main.less")
         .pipe(less({
-            paths: [__dirname + "/assets/styles/"]
+            paths: [__dirname + "/assets/styles/", __dirname + "/node_modules/"]
         }))
         .on("error", logError)
         .pipe(minify())

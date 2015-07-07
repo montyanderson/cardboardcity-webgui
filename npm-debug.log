@@ -11,7 +11,7 @@
 7 verbose unsafe-perm in lifecycle true
 8 info cardboardcity-webgui@0.0.0 Failed to exec dev script
 9 verbose stack Error: cardboardcity-webgui@0.0.0 dev: `gulp dev`
-9 verbose stack Exit status 1
+9 verbose stack Exit status 143
 9 verbose stack     at EventEmitter.<anonymous> (/home/monty/bin/node-v0.12.6-linux-x64/lib/node_modules/npm/lib/utils/lifecycle.js:222:16)
 9 verbose stack     at EventEmitter.emit (events.js:110:17)
 9 verbose stack     at ChildProcess.<anonymous> (/home/monty/bin/node-v0.12.6-linux-x64/lib/node_modules/npm/lib/utils/spawn.js:24:14)
@@ -26,7 +26,7 @@
 15 error npm  v3.0.0
 16 error code ELIFECYCLE
 17 error cardboardcity-webgui@0.0.0 dev: `gulp dev`
-17 error Exit status 1
+17 error Exit status 143
 18 error Failed at the cardboardcity-webgui@0.0.0 dev script 'gulp dev'.
 18 error This is most likely a problem with the cardboardcity-webgui package,
 18 error not with npm itself.
