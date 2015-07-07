@@ -31,7 +31,7 @@ db.buildings = [
     }
 ];
 
-var dbFile = "db.json";
+var dbFile = __dirname + "/db.json";
 
 console.log("Loading database from " + dbFile + "...");
 
