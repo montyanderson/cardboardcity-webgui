@@ -3,3 +3,4 @@ db.json
 .password
 public/bundle.js
 public/bundle.css
+*debug*log
