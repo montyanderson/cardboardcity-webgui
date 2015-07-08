@@ -46,7 +46,7 @@ function sockets(io, db) {
 
             if(buildingExists(name) === true) {
                 socket.emit("err", "Suggestion already exists.");
-            } else if(name !== "" && name.length < 20) {
+            } else if(name !== "" && name.length < 30) {
                 var building = {
                     name: name,
                     votes: 0,
