@@ -2,7 +2,7 @@
   "name": "cardboardcity-webgui",
   "version": "0.0.0",
   "description": "A web interface for the Cardboard City art exhibition.",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
     "dev": "gulp dev",
     "prepublish": "gulp build",

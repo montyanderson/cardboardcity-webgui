@@ -10,8 +10,7 @@ A web interface for the Cardboard City art exhibition.
 
 ![screenshot](https://i.imgur.com/ckJd04t.png)
 
-Install
--------
+## Install
 
 * Install [node.js](https://nodejs.org/).
 
@@ -26,6 +25,7 @@ git clone https://github.com/montyanderson/cardboardcity-webgui.git
 ``` bash
 cd cardboardcity-webgui
 npm install # This may require 'sudo' on Linux
+npm run prepublish
 ```
 
 * Start the server.
@@ -36,8 +36,15 @@ npm start
 
 * Go to [localhost:8080](http://localhost:8080) in your browser.
 
-To Do
------
+## Pulling
+
+``` bash
+git pull origin master
+npm run prepublish
+node server
+```
+
+## To Do
 
 * ~~User-based suggestions~~
 
@@ -46,6 +53,8 @@ To Do
 * ~~Some way of limiting votes per-user~~
 
 * Different views: those being built, those built, suggestions
+
+* 4 states for each building: unapproved, approved, being built, built
 
 * Linear progressions between views (maybe animations?)
 
