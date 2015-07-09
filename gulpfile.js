@@ -5,13 +5,24 @@ var gulp = require("gulp"),
     rename = require("gulp-rename"),
     minify = require("gulp-minify-css"),
     source = require("vinyl-source-stream"),
+    $ = require("jquery"),
     browserify = require("browserify"),
+    watchify = require("watchify");
     path = require("path");
 
 var paths = {
         styles: ["./assets/styles/*.less"],
         scripts: ["./assets/scripts/*.js"]
 };
+
+var b = browserify({
+    cache: {},
+    packageCache: {},
+    entries: [__dirname + "/assets/scripts/index.js"],
+    debug: true
+});
+
+var w = watchify(b);
 
 function logError(err) {
     console.log(err);
@@ -35,8 +46,7 @@ gulp.task("styles", function() {
 });
 
 gulp.task("scripts", function() {
-    return browserify("./assets/scripts/index.js")
-    .bundle()
+    return w.bundle()
     .on("error", logError)
     .pipe(source("bundle.js"))
     .pipe(streamify(uglify()))

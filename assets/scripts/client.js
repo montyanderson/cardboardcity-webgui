@@ -72,6 +72,11 @@ module.exports = function() {
         renderBuildings();
     });
 
+    socket.on("modal", function(modal) {
+        $("body").append("<div class='modal' id='" + modal.name + "'><div>" +
+            modal.html + "<h2><a class='button' href='#'>Close</a></h2></div></div>");
+    });
+
     socket.on("vote-up", function(id) {
         db.buildings[getBuilding(id)].votes += 1;
         renderBuildings();
