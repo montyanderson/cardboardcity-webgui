@@ -14,11 +14,11 @@ function sockets(io, db) {
         return index;
     }
 
-    function buildingExists(name) { /* gets wheather a building exists */
+    function buildingExists(id) { /* gets wheather a building exists */
         var exists = false;
 
         db.buildings.forEach(function(building) {
-            if(building.name == name) {
+            if(building.id == id) {
                 exists = true;
             }
         });
@@ -47,15 +47,15 @@ function sockets(io, db) {
             }
         });
 
-        socket.on("suggestion", function(name) {
+        socket.on("suggestion", function(id) {
 
-            if(buildingExists(name) === true) {
+            if(buildingExists(id) === true) {
                 socket.emit("err", "Suggestion already exists.");
-            } else if(name !== "" && name.length < 30) {
+            } else if(id !== "" && id.length < 30) {
                 var building = {
-                    name: name,
+                    id: id,
                     votes: 0,
-                    id: db.buildings.length
+                    state: "unapproved"
                 };
 
                 io.emit("building", building);

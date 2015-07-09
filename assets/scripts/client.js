@@ -41,7 +41,7 @@ module.exports = function() {
                 db.buildings[buildingIndex].voted = true;
                 socket.emit("vote-up", $(this).data("id"));
             } else {
-                alert("You have already voted on the " + db.buildings[buildingIndex].name + ".");
+                alert("You have already voted on the " + db.buildings[buildingIndex].id + ".");
             }
         });
 
@@ -52,7 +52,7 @@ module.exports = function() {
                 db.buildings[buildingIndex].voted = true;
                 socket.emit("vote-down", $(this).data("id"));
             } else {
-                alert("You have already voted on the " + db.buildings[buildingIndex].name + ".");
+                alert("You have already voted on the " + db.buildings[buildingIndex].id + ".");
             }
         });
     }
@@ -73,7 +73,7 @@ module.exports = function() {
     });
 
     socket.on("modal", function(modal) {
-        $("body").append("<div class='modal' id='" + modal.name + "'><div>" +
+        $("body").append("<div class='modal' id='" + modal.id + "'><div>" +
             modal.html + "<h2><a class='button' href='#'>Close</a></h2></div></div>");
     });
 
