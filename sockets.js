@@ -47,6 +47,20 @@ function sockets(io, db) {
             }
         });
 
+        socket.on("approve", function(id) {
+            if(getBuilding(id) != -1) {
+                io.emit("approve", id);
+                db.buildings[getBuilding(id)].approved = true;
+            }
+        });
+
+        socket.on("unapprove", function(id) {
+            if(getBuilding(id) != -1) {
+                io.emit("unapprove", id);
+                db.buildings[getBuilding(id)].approved = false;
+            }
+        });
+
         socket.on("suggestion", function(id) {
 
             if(buildingExists(id) === true) {
@@ -55,7 +69,7 @@ function sockets(io, db) {
                 var building = {
                     id: id,
                     votes: 0,
-                    state: "unapproved"
+                    approved: false
                 };
 
                 io.emit("building", building);
@@ -70,9 +84,11 @@ function sockets(io, db) {
                 if (err) throw err;
 
                 if(password.trim() == data.toString().trim()) {
-                    console.log("true");
+                    console.log(true);
+                    socket.emit("admin", true);
                 } else {
-                    console.log("false");
+                    console.log(false);
+                    socket.emit("admin", false);
                 }
             });
         });

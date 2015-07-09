@@ -8,6 +8,16 @@
         <script type="x/template" id="template-building">
             <div class="building">
                 <h1 class="name">{{id}}</h1>
+
+                {{#admin}}
+                    {{#approved}}
+                        <button class="unapprove" data-id="{{id}}">Unapprove</button>
+                    {{/approved}}
+                    {{^approved}}
+                        <button class="approve" data-id="{{id}}">Approve</button>
+                    {{/approved}}
+                {{/admin}}
+
                 <h1 class="votes">
                     {{#up}}
                         <span class="green">{{votes}}</span>
