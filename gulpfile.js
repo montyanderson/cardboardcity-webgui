@@ -44,12 +44,16 @@ gulp.task("styles", function() {
 });
 
 gulp.task("scripts", function() {
-    return w.bundle()
-    .on("error", logError)
-    .pipe(source("bundle.js"))
-    .pipe(streamify(uglify()))
-    .pipe(rename("bundle.js"))
-    .pipe(gulp.dest("./public/"));
+    return watchify(b).bundle()
+        .on("error", logError)
+        .pipe(source("bundle.js"))
+        .pipe(streamify(uglify()))
+        .pipe(rename("bundle.js"))
+        .pipe(gulp.dest("./public/"));
+});
+
+gulp.on("stop", function() {
+    process.exit(0);
 });
 
 gulp.task("build", ["styles", "scripts"]);
