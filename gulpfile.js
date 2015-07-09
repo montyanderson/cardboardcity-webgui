@@ -5,7 +5,7 @@ var gulp = require("gulp"),
     rename = require("gulp-rename"),
     minify = require("gulp-minify-css"),
     source = require("vinyl-source-stream"),
-    $ = require("jquery"),
+    merge = require("merge"),
     browserify = require("browserify"),
     watchify = require("watchify");
     path = require("path");
@@ -15,12 +15,10 @@ var paths = {
         scripts: ["./assets/scripts/*.js"]
 };
 
-var b = browserify({
-    cache: {},
-    packageCache: {},
-    entries: [__dirname + "/assets/scripts/index.js"],
-    debug: true
-});
+var b = browserify(merge(watchify.args, {
+    entries: [__dirname + "/assets/scripts/index.js"]
+    //debug: true
+}));
 
 var w = watchify(b);
 
