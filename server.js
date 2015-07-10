@@ -4,10 +4,14 @@ var fs = require("fs"),
     express = require("express"),
     socketio = require("socket.io");
 
+var router = require("./router.js");
+var sockets = require("./sockets.js");
+
 console.log("Generating app...");
 
 var app = express();
 app.use(express.static(__dirname + "/public"));
+app.use(router);
 
 var server = http.createServer(app);
 
@@ -37,7 +41,7 @@ if(fs.existsSync(dbFile) === true) {
 
 var io = socketio(server);
 
-require("./sockets.js")(io, db);
+sockets(io, db);
 
 setInterval(function() {
 

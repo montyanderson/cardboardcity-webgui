@@ -6,35 +6,7 @@
         <link href="bundle.css" rel="stylesheet" />
 
         <script type="x/template" id="template-building">
-            <div class="building">
-                <h1 class="name">{{id}}</h1>
-
-                {{#admin}}
-                    {{#approved}}
-                        <button class="unapprove" data-id="{{id}}">Unapprove</button>
-                    {{/approved}}
-                    {{^approved}}
-                        <button class="approve" data-id="{{id}}">Approve</button>
-                    {{/approved}}
-                {{/admin}}
-
-                <h1 class="votes">
-                    {{#up}}
-                        <span class="green">{{votes}}</span>
-                    {{/up}}
-
-                    {{#down}}
-                        <span class="red">{{votes}}</span>
-                    {{/down}}
-
-                    {{#zero}}
-                        <span>{{votes}}</span>
-                    {{/zero}}
-
-                    <span class="vote-up"   data-id="{{id}}">+</span>
-                    <span class="vote-down" data-id="{{id}}">-</span>
-                </h1>
-            </div>
+            {{{building}}}
         </script>
 
     </head>
@@ -71,6 +43,15 @@
                 <h2><a class="button" href="#">Close</a></h2>
             </div>
         </div>
+
+        {{#modals}}
+        <div class="modal" id="{{id}}">
+            <div>
+                {{{html}}}
+                <h2><a class="button" href="#">Close</a></h2>
+            </div>
+        </div>
+        {{/modals}}
 
         <div class="footer">
             <p>

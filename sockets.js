@@ -1,6 +1,5 @@
 function sockets(io, db) {
     var fs = require("fs");
-    var markdown = require("./markdown.js");
 
     function getBuilding(id) { /* gets the index of a building in the array */
         var index;
@@ -28,10 +27,6 @@ function sockets(io, db) {
 
     io.on("connection", function(socket) {
         socket.emit("init", db);
-
-        markdown(function(text) {
-            socket.emit("modal", text);
-        });
 
         socket.on("vote-up", function(id) {
             if(getBuilding(id) != -1) {
