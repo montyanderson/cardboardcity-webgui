@@ -52,9 +52,11 @@ gulp.task("scripts", function() {
         .pipe(gulp.dest("./public/"));
 });
 
-gulp.on("stop", function() {
-    process.exit(0);
+gulp.task("finish", function() {
+    gulp.on("stop", function() {
+        process.exit(0);
+    });
 });
 
-gulp.task("build", ["styles", "scripts"]);
-gulp.task("dev", ["build", "watch"]);
+gulp.task("build", ["styles", "scripts", "finish"]);
+gulp.task("dev", ["styles", "scripts", "watch"]);
