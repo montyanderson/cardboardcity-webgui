@@ -36,4 +36,10 @@ router.get("/", function(req, res) {
     });
 });
 
+router.get("/json", function(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.sendFile(__dirname + "/db.json");
+});
+
 module.exports = router;
