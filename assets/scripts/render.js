@@ -1,4 +1,3 @@
-var renderBuildings = require("./render.js");
 var getBuilding = require("./getBuilding.js");
 
 module.exports = function() {

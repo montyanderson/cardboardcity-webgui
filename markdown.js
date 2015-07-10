@@ -8,7 +8,7 @@ module.exports = function(callback) {
             fs.readFile(file, function(fileErr, markdown) {
                 if(!fileErr) {
                     callback({
-                        name: file.replace(__dirname + "/", "").replace(".md", ""),
+                        id: file.replace(__dirname + "/", "").replace(".md", ""),
                         html: marked(markdown.toString())
                     });
                 }
