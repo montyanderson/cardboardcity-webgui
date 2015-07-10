@@ -8,7 +8,7 @@ A web interface for the Cardboard City art exhibition.
 
 * The view as of 7/7/2015
 
-![screenshot](https://i.imgur.com/ckJd04t.png)
+![screenshot](https://i.imgur.com/3TVvlGM.png)
 
 ## Install
 
