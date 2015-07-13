@@ -1,6 +1,6 @@
 var gulp = require("gulp"),
     less = require("gulp-less"),
-    streamify = require("gulp-streamify"),
+    buffer = require("vinyl-buffer"),
     uglify = require("gulp-uglify"),
     rename = require("gulp-rename"),
     minify = require("gulp-minify-css"),
@@ -44,10 +44,11 @@ gulp.task("styles", function() {
 });
 
 gulp.task("scripts", function() {
-    return watchify(b).bundle()
+    return w.bundle()
         .on("error", logError)
         .pipe(source("bundle.js"))
-        .pipe(streamify(uglify()))
+        .pipe(buffer())
+        //.pipe(uglify())
         .pipe(rename("bundle.js"))
         .pipe(gulp.dest("./public/"));
 });
