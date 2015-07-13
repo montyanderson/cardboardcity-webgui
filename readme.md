@@ -10,6 +10,10 @@ A web interface for the Cardboard City art exhibition.
 
 ![screenshot](https://i.imgur.com/3TVvlGM.png)
 
+## Database Dumps
+
+All of the [Database Dumps are available here](https://gist.github.com/montyanderson/033d7cb89632734665d3).
+
 ## Install
 
 * Install [node.js](https://nodejs.org/).

@@ -76,7 +76,9 @@ function sockets(io, db) {
 
         socket.on("login", function(password) {
             fs.readFile(__dirname + "/.password", function(err, data) {
-                if (err) throw err;
+                if(err) {
+                    socket.emit("err", "Sorry, no password has been set.");
+                }
 
                 if(password.trim() == data.toString().trim()) {
                     console.log(true);
